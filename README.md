@@ -23,7 +23,7 @@
 
 Выходные данные после выполнения кода:
 
-|space|wooman |home hom1|12 |
+-w |space|wooman |home hom1|12 |
 | tom |       |ma nag er|gfg|
 |error|3 4 5 3|  c a r  | 3 |
 |     |  //   |         |   |
