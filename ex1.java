@@ -2,23 +2,23 @@ package croc;
 
 import java.util.ArrayList;
 
-class formatTabl{   //класс форматирования таблицы
+class formatTabl{   //РєР»Р°СЃСЃ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ С‚Р°Р±Р»РёС†С‹
 	String[] vvod;
 	ArrayList<String[]> array=new ArrayList<>();
-	int i,j,l; //l для буленовского массива
+	int i,j,l; //l Г¤Г«Гї ГЎГіГ«ГҐГ­Г®ГўГ±ГЄГ®ГЈГ® Г¬Г Г±Г±ГЁГўГ 
 	boolean[] b;
 	formatTabl(String[] vvod){
 		this.vvod=vvod;
 	}
 	
-	void raz(){ //метод разделения на массивы
+	void raz(){ //Г¬ГҐГІГ®Г¤ Г°Г Г§Г¤ГҐГ«ГҐГ­ГЁГї Г­Г  Г¬Г Г±Г±ГЁГўГ»
 		int max,k;
 		max=0;
 		String[] m;
-		for (i=0;i<vvod.length;i++){ //цикл по разделению строки на массив и добавление к листу
+		for (i=0;i<vvod.length;i++){ //Г¶ГЁГЄГ« ГЇГ® Г°Г Г§Г¤ГҐГ«ГҐГ­ГЁГѕ Г±ГІГ°Г®ГЄГЁ Г­Г  Г¬Г Г±Г±ГЁГў ГЁ Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГЄ Г«ГЁГ±ГІГі
 			if (vvod[i]!=null)	{
-				vvod[i]=vvod[i].substring(1); // перезапись строки без первого разделителя
-				array.add(vvod[i].split("\\|"));// добавление к листу и разделение на массивы
+				vvod[i]=vvod[i].substring(1); // ГЇГҐГ°ГҐГ§Г ГЇГЁГ±Гј Г±ГІГ°Г®ГЄГЁ ГЎГҐГ§ ГЇГҐГ°ГўГ®ГЈГ® Г°Г Г§Г¤ГҐГ«ГЁГІГҐГ«Гї
+				array.add(vvod[i].split("\\|"));// Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГЄ Г«ГЁГ±ГІГі ГЁ Г°Г Г§Г¤ГҐГ«ГҐГ­ГЁГҐ Г­Г  Г¬Г Г±Г±ГЁГўГ»
 			}
 		}
 		
@@ -44,8 +44,8 @@ class formatTabl{   //класс форматирования таблицы
 		
 		b=new boolean[array.get(0).length];
 		for (j=0;j<array.get(0).length;j++){
-			b[j]=true; //если полностью пустой столбец то тру
-		for (i=0;i<array.size();i++){ //для поиска пустого столбца
+			b[j]=true; //ГҐГ±Г«ГЁ ГЇГ®Г«Г­Г®Г±ГІГјГѕ ГЇГіГ±ГІГ®Г© Г±ГІГ®Г«ГЎГҐГ¶ ГІГ® ГІГ°Гі
+		for (i=0;i<array.size();i++){ //Г¤Г«Гї ГЇГ®ГЁГ±ГЄГ  ГЇГіГ±ГІГ®ГЈГ® Г±ГІГ®Г«ГЎГ¶Г 
 			if (array.get(i)[j]==null || array.get(i)[j].isEmpty()){
 				
 			} else {
@@ -55,7 +55,7 @@ class formatTabl{   //класс форматирования таблицы
 		System.out.println(b[j] +" "+j);
 		}
 		l=0;
-		for (i=0;i<b.length;i++){ //для поиска на сколько нужен сдвиг по столбцам
+		for (i=0;i<b.length;i++){ //Г¤Г«Гї ГЇГ®ГЁГ±ГЄГ  Г­Г  Г±ГЄГ®Г«ГјГЄГ® Г­ГіГ¦ГҐГ­ Г±Г¤ГўГЁГЈ ГЇГ® Г±ГІГ®Г«ГЎГ¶Г Г¬
 			if (b[i]==false){
 			l++;	
 			}
@@ -69,7 +69,7 @@ class formatTabl{   //класс форматирования таблицы
 				System.out.println(array.get(i)[j]);
 			}
 		}
-		for (i=0;i<array.size();i++){ //цикл для сдвига массива
+		for (i=0;i<array.size();i++){ //Г¶ГЁГЄГ« Г¤Г«Гї Г±Г¤ГўГЁГЈГ  Г¬Г Г±Г±ГЁГўГ 
 			m=new String[l];
 			k=0;
 			for(j=0;j<array.get(0).length;j++){
@@ -84,19 +84,19 @@ class formatTabl{   //класс форматирования таблицы
 	
 
 	
-	void up(){ //метод убирает пробелы
+	void up(){ //Г¬ГҐГІГ®Г¤ ГіГЎГЁГ°Г ГҐГІ ГЇГ°Г®ГЎГҐГ«Г»
 		int g;
-		String per=""; //перезаписывающаяся строка
+		String per=""; //ГЇГҐГ°ГҐГ§Г ГЇГЁГ±Г»ГўГ ГѕГ№Г ГїГ±Гї Г±ГІГ°Г®ГЄГ 
 		for (i=0;i<array.size();i++){
 			for(j=0;j<array.get(i).length;j++){
 				if(array.get(i)[j]==null){
 					array.get(i)[j]=" ";
 					array.get(i)[j]=array.get(i)[j].trim();
 				}
-				array.get(i)[j]=array.get(i)[j].trim(); // убирает пробелы в начале и в конце
-				for (g=0;g<array.get(i)[j].length();g++){ //цикл по строке в итой ячейке
+				array.get(i)[j]=array.get(i)[j].trim(); // ГіГЎГЁГ°Г ГҐГІ ГЇГ°Г®ГЎГҐГ«Г» Гў Г­Г Г·Г Г«ГҐ ГЁ Гў ГЄГ®Г­Г¶ГҐ
+				for (g=0;g<array.get(i)[j].length();g++){ //Г¶ГЁГЄГ« ГЇГ® Г±ГІГ°Г®ГЄГҐ Гў ГЁГІГ®Г© ГїГ·ГҐГ©ГЄГҐ
 					
-					if(array.get(i)[j].charAt(g)==' '){ //циклы проверки каждой буквы на пробел и перезапись строки без них
+					if(array.get(i)[j].charAt(g)==' '){ //Г¶ГЁГЄГ«Г» ГЇГ°Г®ГўГҐГ°ГЄГЁ ГЄГ Г¦Г¤Г®Г© ГЎГіГЄГўГ» Г­Г  ГЇГ°Г®ГЎГҐГ« ГЁ ГЇГҐГ°ГҐГ§Г ГЇГЁГ±Гј Г±ГІГ°Г®ГЄГЁ ГЎГҐГ§ Г­ГЁГµ
 						if(array.get(i)[j].charAt(g+1)==' '){
 							
 						}else{per=per+array.get(i)[j].charAt(g);}
@@ -114,12 +114,12 @@ class formatTabl{   //класс форматирования таблицы
 		String per="";
 		int n;
 		int razn;
-		int [] max=new int[array.get(0).length]; //массив для самого большого эл в столбце
+		int [] max=new int[array.get(0).length]; //Г¬Г Г±Г±ГЁГў Г¤Г«Гї Г±Г Г¬Г®ГЈГ® ГЎГ®Г«ГјГёГ®ГЈГ® ГЅГ« Гў Г±ГІГ®Г«ГЎГ¶ГҐ
 		for (i=0;i<max.length;i++){
 			max[i]=0;
 		}
 		
-		for (j=0;j<array.get(0).length;j++){ //цикл поиска самого большого элемента в столбце
+		for (j=0;j<array.get(0).length;j++){ //Г¶ГЁГЄГ« ГЇГ®ГЁГ±ГЄГ  Г±Г Г¬Г®ГЈГ® ГЎГ®Г«ГјГёГ®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  Гў Г±ГІГ®Г«ГЎГ¶ГҐ
 			for(i=0;i<array.size();i++){ 
 
 				if(array.get(i)[j].length()>max[j]){
@@ -130,13 +130,13 @@ class formatTabl{   //класс форматирования таблицы
 			
 		}
 		
-		for (j=0;j<array.get(0).length;j++){ //цикл добавления пробелов
+		for (j=0;j<array.get(0).length;j++){ //Г¶ГЁГЄГ« Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГї ГЇГ°Г®ГЎГҐГ«Г®Гў
 			for(i=0;i<array.size();i++){
 				
 				razn=max[j]-array.get(i)[j].length();
 				
 				if(razn!=0){
-					if(razn%2==0){//проверяем на деление без остатка и добавляем пробелы
+					if(razn%2==0){//ГЇГ°Г®ГўГҐГ°ГїГҐГ¬ Г­Г  Г¤ГҐГ«ГҐГ­ГЁГҐ ГЎГҐГ§ Г®Г±ГІГ ГІГЄГ  ГЁ Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ ГЇГ°Г®ГЎГҐГ«Г»
 						for(n=0;n<razn/2;n++){
 						per=per+" ";	
 						}
@@ -184,7 +184,7 @@ public class ex1 {
 		vvod[1]="| ||mya ki|gfg|";
 		vvod[2]="|kkkfdsfgot||myaki||";
 		vvod[3]="|kkkfdsfgot||myaki||";
-	//при поиске указанный индекс 0 выявляет сколько действительных столбцов
+	//ГЇГ°ГЁ ГЇГ®ГЁГ±ГЄГҐ ГіГЄГ Г§Г Г­Г­Г»Г© ГЁГ­Г¤ГҐГЄГ± 0 ГўГ»ГїГўГ«ГїГҐГІ Г±ГЄГ®Г«ГјГЄГ® Г¤ГҐГ©Г±ГІГўГЁГІГҐГ«ГјГ­Г»Гµ Г±ГІГ®Г«ГЎГ¶Г®Гў
 		
 		formatTabl Tabl=new formatTabl(vvod);
 		
